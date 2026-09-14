@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#764ba2">
+
+    <title>Happy 1st Anniversary ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(circle at top left, #ff9a9e 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #a18cd1 0%, transparent 35%),
+                linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px 15px;
+            position: relative;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 700px;
+            padding: 32px 25px 28px;
+            text-align: center;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.28);
+            box-shadow: 0 20px 55px rgba(0,0,0,0.28);
+            position: relative;
+            z-index: 10;
+            animation: cardAppear 1s ease;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(35px) scale(.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .small-title {
+            font-size: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+            opacity: .9;
+        }
+
+        h1 {
+            font-size: clamp(42px, 9vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 18px;
+            text-shadow: 0 5px 20px rgba(0,0,0,.22);
+        }
+
+        .one {
+            font-weight: 800;
+        }
+
+        /* Uploaded anniversary image */
+        .anniversary-photo {
+            width: 100%;
+            max-width: 560px;
+            display: block;
+            margin: 0 auto 25px;
+            border-radius: 24px;
+            border: 5px solid rgba(255,255,255,.85);
+            box-shadow: 0 12px 35px rgba(0,0,0,.30);
+        }
+
+        .date {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 50px;
+            background: rgba(255,255,255,.18);
+            margin-bottom: 22px;
+            font-size: 15px;
+        }
+
+        .message {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 560px;
+            margin: 0 auto 28px;
+            opacity: .96;
+        }
+
+        .celebrate-btn {
+            border: none;
+            padding: 15px 32px;
+            border-radius: 50px;
+            background: white;
+            color: #764ba2;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0,0,0,.22);
+            transition: .25s ease;
+        }
+
+        .celebrate-btn:hover {
+            transform: translateY(-3px) scale(1.04);
+            box-shadow: 0 12px 30px rgba(0,0,0,.30);
+        }
+
+        .celebrate-btn:active {
+            transform: scale(.95);
+        }
+
+        footer {
+            margin-top: 22px;
+            font-size: 13px;
+            opacity: .75;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -50px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            animation: floatUp linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: .8;
+            }
+            100% {
+                transform: translateY(-115vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 14px 10px;
+            }
+
+            .card {
+                padding: 27px 15px 23px;
+                border-radius: 24px;
+            }
+
+            .small-title {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .anniversary-photo {
+                border-width: 4px;
+                border-radius: 18px;
+                margin-bottom: 20px;
+            }
+
+            .message {
+                font-size: 16px;
+                line-height: 1.6;
+            }
+
+            .celebrate-btn {
+                width: 92%;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+        <section class="card">
+
+            <div class="small-title">A Special Celebration ✨</div>
+
+            <!-- Your uploaded image -->
+            <img
+                class="anniversary-photo"
+                src="anniversary.jpg"
+                alt="Our special anniversary memory"
+            >
+
+            <h1>
+                Happy <span class="one">1st</span><br>
+                Anniversary ❤️
+            </h1>
+
+            <div class="date">
+                ✨ One Wonderful Year ✨
+            </div>
+
+            <p class="message">
+                One year filled with beautiful memories, unforgettable moments,
+                laughter, smiles, and countless reasons to celebrate.
+                Here's to this beautiful journey and many more memories ahead! 💕
+            </p>
+
+            <button class="celebrate-btn" onclick="celebrate()">
+                🎊 Celebrate! 🎊
+            </button>
+
+            <footer>
+                Made with ❤️ for a special day
+            </footer>
+
+        </section>
+    </main>
+
+    <!-- Confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <script>
+        function celebrate() {
+            const duration = 4500;
+            const end = Date.now() + duration;
+
+            const colors = [
+                "#ff6b6b",
+                "#ffd93d",
+                "#6bcB77",
+                "#4d96ff",
+                "#ffffff",
+                "#ff8fab"
+            ];
+
+            (function frame() {
+                confetti({
+                    particleCount: 8,
+                    angle: 60,
+                    spread: 65,
+                    origin: { x: 0 },
+                    colors: colors
+                });
+
+                confetti({
+                    particleCount: 8,
+                    angle: 120,
+                    spread: 65,
+                    origin: { x: 1 },
+                    colors: colors
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            })();
+
+            setTimeout(() => {
+                confetti({
+                    particleCount: 220,
+                    spread: 110,
+                    startVelocity: 45,
+                    origin: { x: 0.5, y: 0.65 },
+                    colors: colors
+                });
+            }, 300);
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+
+            const symbols = ["❤️", "💖", "💕", "💗", "💜", "✨"];
+            heart.textContent =
+                symbols[Math.floor(Math.random() * symbols.length)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (18 + Math.random() * 22) + "px";
+            heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 12000);
+        }
+
+        setInterval(createHeart, 650);
+
+        window.addEventListener("load", () => {
+            setTimeout(() => {
+                confetti({
+                    particleCount: 120,
+                    spread: 85,
+                    origin: { x: 0.5, y: 0.65 }
+                });
+            }, 900);
+        });
+    </script>
+
+</body>
+</html>
